@@ -1,8 +1,8 @@
 FROM alpine:latest
 MAINTAINER paintenzero
 #Install Borg & SSH
-RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
-RUN echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
+RUN echo "@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 RUN apk add openssh borgbackup@edgecommunity supervisor --no-cache 
 RUN adduser -D -u 1000 borg && \
     ssh-keygen -A && \
